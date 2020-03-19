@@ -9,7 +9,36 @@
 {% block content %}
 <div style="background-color:#FCDD09">
 
-<p>hola</p>
+<div class='col mt-5'>
+  <div class='row d-flex justify-content-center'>
+
+  <div class="card" style="width: 18rem;background-color:#DA131A">
+    <img src='{% static 'images/fingerprint.png' %}' class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title text-center text-white">Introduce tus datos</h5>
+      <p class="card-text text-center text-white">Introduce tu información de contacto para el correcto funcionamiento de tu evaluación.</p>
+    </div>
+  </div>
+
+  <div class="card ml-3" style="width: 18rem;background-color:#DA131A">
+    <img src='{% static 'images/process.png' %}' class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title text-center text-white">Realiza tu autoevaluación</h5>
+      <p class="card-text text-center text-white">Contesta las preguntas de evaluación, te ayudarán a saber más sobre tu estado de salud.</p>
+    </div>
+  </div>
+
+  <div class="card ml-3" style="width: 18rem;background-color:#DA131A">
+    <img src='{% static 'images/bell.png' %}' class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title text-center text-white">Instrucciones y consejos</h5>
+      <p class="card-text text-center text-white">Tras la autoevaluación, te aconsejaremos qué hacer después y te ofreceremos recomendaciones.</p>
+    </div>
+  </div>
+</div>
+
+
+</div>
 
 </div>
 {% endblock content %}
