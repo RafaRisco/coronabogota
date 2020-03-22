@@ -1,11 +1,12 @@
 {% load static %}
 
 <nav class="navbar navbar-expand-lg" style="background-color:#DA131A">
+  <div class='container'>
 
   <a class="navbar-brand" href="#">
     <div class='text-white'>
-    <img src='{% static 'images/Escudo Bogotá.png' %}' width="30" height="30" class="d-inline-block align-top" alt="">
-      Alcaldía de Bogotá
+    <img src='{% static 'images/virus.png' %}' width="30" height="30" class="d-inline-block align-top mr-3" alt="">
+        Asistencia COVID-19
     </div>
   </a>
 
@@ -13,17 +14,20 @@
     <span class="navbar-toggler-icon"></span>
   </button>
 
-  <div class="collapse navbar-collapse d-flex justify-content-end" id="navbarSupportedContent">
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item active">
-          <a class="nav-link text-white" href="#">Home <span class="sr-only">(current)</span></a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link text-white" href="#">Link</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link disabled text-white" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-        </li>
-      </ul>
+  <div class='row'>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active ml-5">
+            <a class="nav-link text-white" href="#">Contáctanos<span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item ml-5">
+            <a class="nav-link text-white" href="#">Preguntas frecuentes</a>
+          </li>
+          <li class="nav-item ml-5">
+            <a class="nav-link disabled text-white" href="#" tabindex="-1" aria-disabled="true">Recomendaciones Alcaldía de Bogotá</a>
+          </li>
+        </ul>
+      </div>
+    </div>
     </div>
 </nav>

@@ -7,36 +7,99 @@
 {% endblock navbar %}
 
 {% block content %}
-<div style="background-color:#FCDD09">
+<div style="background-color:#FCDD09" class='container'>
 
-<div class='col mt-5'>
-  <div class='row d-flex justify-content-center'>
+<div class='col'>
 
-  <div class="card" style="width: 18rem;background-color:#DA131A">
-    <img src='{% static 'images/fingerprint.png' %}' class="card-img-top" alt="...">
-    <div class="card-body">
-      <h5 class="card-title text-center text-white">Introduce tus datos</h5>
-      <p class="card-text text-center text-white">Introduce tu información de contacto para el correcto funcionamiento de tu evaluación.</p>
+<div class='row d-flex justify-content-center'>
+  <div class='col-10'>
+  <div class='d-flex justify-content-center mt-5'>
+    <div class='text-center'>
+    <img src='{% static 'images/Escudo Bogotá.png' %}' class="img-fluid" alt="Responsive image">
+      <h5 style="color:#DA131A">Alcaldía de Bogotá</h5>
+      <h1 class='display-1' style="color:#DA131A"><b>Haz tu autoevaluación del COVID-19</b></h1>
+      <h4 style="color:#DA131A">Evalúa tu salud y recibe instrucciones y recomendaciones sobre el COVID-19 con la Página Oficial de la Alcaldía de Bogotá.</h4>
     </div>
   </div>
-
-  <div class="card ml-3" style="width: 18rem;background-color:#DA131A">
-    <img src='{% static 'images/process.png' %}' class="card-img-top" alt="...">
-    <div class="card-body">
-      <h5 class="card-title text-center text-white">Realiza tu autoevaluación</h5>
-      <p class="card-text text-center text-white">Contesta las preguntas de evaluación, te ayudarán a saber más sobre tu estado de salud.</p>
-    </div>
   </div>
+</div>
 
-  <div class="card ml-3" style="width: 18rem;background-color:#DA131A">
-    <img src='{% static 'images/bell.png' %}' class="card-img-top" alt="...">
-    <div class="card-body">
-      <h5 class="card-title text-center text-white">Instrucciones y consejos</h5>
-      <p class="card-text text-center text-white">Tras la autoevaluación, te aconsejaremos qué hacer después y te ofreceremos recomendaciones.</p>
+<div class='row d-flex justify-content-center mt-5'>
+  <div class='col-10'>
+    <div class="alert alert-warning" role="alert">
+      <div class='row d-flex justify-content-end'>
+        <div class='col-1 w-50 align-self-center'>
+          <img src='{% static 'images/circle2.png' %}' class="img-fluid" alt="Responsive image">
+        </div>
+        <div class='col-11'>
+          Realiza esta autoevaluación sólo si crees que tienes síntomas. La Alcaldía de Bogotá es la responsable del tratamiento de los datos y su finalidad es sanitaria.
+        </div>
+      </div>
     </div>
   </div>
 </div>
 
+<div class='row'>
+  <div class='col d-flex justify-content-center'>
+    <button type="button" class="btn btn-primary btn-lg">Entendido. Realizar autoevaluación</button>
+  </div>
+</div>
+
+
+<div class='col mt-5 mb-5'>
+
+  <div class='row d-flex justify-content-center'>
+
+    <div class="card" style="width: 18rem;background-color:#DA131A">
+      <div class='w-25 align-self-center mt-5 mb-3'>
+        <img src='{% static 'images/fingerprint.png' %}' class="card-img-top" alt="...">
+      </div>
+      <div class="card-body">
+        <h5 class="card-title text-center text-white">Introduce tus datos</h5>
+        <p class="card-text text-center text-white">Introduce tu información de contacto para el correcto funcionamiento de tu evaluación.</p>
+      </div>
+    </div>
+
+    <div class="card ml-3" style="width: 18rem;background-color:#DA131A">
+      <div class='w-25 align-self-center mt-5 mb-3'>
+        <img src='{% static 'images/process.png' %}' class="card-img-top" alt="...">
+      </div>
+      <div class="card-body">
+        <h5 class="card-title text-center text-white">Realiza tu autoevaluación</h5>
+        <p class="card-text text-center text-white">Contesta las preguntas de evaluación, te ayudarán a saber más sobre tu estado de salud.</p>
+      </div>
+    </div>
+
+    <div class="card ml-3" style="width: 18rem;background-color:#DA131A">
+      <div class='w-25 align-self-center mt-5 mb-3'>
+        <img src='{% static 'images/bell.png' %}' class="card-img-top" alt="...">
+      </div>
+      <div class="card-body">
+        <h5 class="card-title text-center text-white">Instrucciones y consejos</h5>
+        <p class="card-text text-center text-white">Tras la autoevaluación, te aconsejaremos qué hacer después y te ofreceremos recomendaciones.</p>
+      </div>
+    </div>
+
+  </div>
+
+</div>
+
+<div class='d-flex justify-content-center mt-5 mb-5'>
+  <div class='text-center'>
+  <img src='{% static 'images/Escudo Bogotá.png' %}' class="img-fluid" alt="Responsive image">
+    <h5 style="color:#DA131A">Alcaldía de Bogotá</h5>
+  </div>
+</div>
+
+<div class='row d-flex justify-content-center mb-5'>
+    <img src='{% static 'images/virus2.png' %}' width="30" height="30" class="d-inline-block align-top mr-3" alt="">
+    <h4 style="color:#DA131A">Asistencia COVID-19</h4>
+</div>
+
+<div class='row d-flex justify-content-center mb-5'>
+    <h5 style="color:#DA131A">Terminos y condiciones</h5>
+    <h5 class='ml-3' style="color:#DA131A">Aviso de privacidad</h5>
+</div>
 
 </div>
 
