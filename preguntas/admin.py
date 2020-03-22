@@ -17,6 +17,8 @@ class RespuestaAdmin(admin.ModelAdmin):
     list_display = [
         'pk',
         'titulo',
+        'titulo_pregunta',
+        'numero_consulta'
     ]
 
-admin.site.register(Respuesta)
+admin.site.register(Respuesta, RespuestaAdmin)
