@@ -18,7 +18,8 @@ class RespuestaAdmin(admin.ModelAdmin):
         'pk',
         'titulo',
         'titulo_pregunta',
-        'numero_consulta'
+        'titulo_binario',
+        'numero_consulta',
     ]
 
 admin.site.register(Respuesta, RespuestaAdmin)
