@@ -1,0 +1,79 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class='container'>
+
+
+
+<div class='bg-light py-3 px-5'>
+  <form method='GET' action='{% url 'consultas:lista' %}'>
+    <p>FILTRAR RESULTADOS</p>
+    {% csrf_token %}
+    <p><b>Ciudad</b></p>
+    {% for ciudad in ciudades %}
+    <label class="form-check d-flex justify-content-start">
+      <input class="form-check-input" type="checkbox" value='{{ciudad.nombre}}' name='{{ciudad.nombre}}'>
+      <span class="form-check-label">
+        {{ciudad.nombre}}
+      </span>
+    </label>
+    {% endfor %}
+
+
+    <p><b>Gravedad autoevaluación</b></p>
+    <label class="form-check d-flex justify-content-start">
+      <input class="form-check-input" type="checkbox" value='Baja' name='Baja'>
+      <span class="form-check-label">
+        Baja
+      </span>
+    </label>
+
+    <label class="form-check d-flex justify-content-start">
+      <input class="form-check-input" type="checkbox" value='Media' name='Media'>
+      <span class="form-check-label">
+        Media
+      </span>
+    </label>
+
+    <label class="form-check d-flex justify-content-start">
+      <input class="form-check-input" type="checkbox" value='Alta' name='Alta'>
+      <span class="form-check-label">
+        Alta
+      </span>
+    </label>
+    <hr>
+    <button type='submit' class='btn btn-primary'>Filtrar</button>
+  </form>
+
+  <table class="table table-hover mt-5">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Teléfono</th>
+        <th scope="col">Gravedad</th>
+        <th scope="col">Ciudad</th>
+        <th scope="col">Latitud</th>
+        <th scope="col">Longitud</th>
+        <th scope="col">Fecha</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for consulta in object_list %}
+      <tr>
+        <th scope="row">{{consulta.pk}}</th>
+        <td>{{consulta.telefono}}</td>
+        <td>{{consulta.gravedad}}</td>
+        <td>{{consulta.ciudad}}</td>
+        <td>{{consulta.lat}}</td>
+        <td>{{consulta.long}}</td>
+        <td>{{consulta.dia}}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+
+</div>
+
+{% endblock %}

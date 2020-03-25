@@ -7,7 +7,7 @@
 {% endblock navbar %}
 
 {% block content %}
-<div style="background-color:#FCDD09" class='container'>
+<div style="background-color:#DA131A" class='container'>
 
 <div class='col'>
 
@@ -16,9 +16,9 @@
   <div class='d-flex justify-content-center mt-5'>
     <div class='text-center'>
     <img src='{% static 'images/Escudo Bogotá.png' %}' class="img-fluid" alt="Responsive image">
-      <h5 style="color:#DA131A">Alcaldía de Bogotá</h5>
-      <h1 class='display-1' style="color:#DA131A"><b>Haz tu autoevaluación del COVID-19</b></h1>
-      <h4 style="color:#DA131A">Evalúa tu salud y recibe instrucciones y recomendaciones sobre el COVID-19 con la Página Oficial de la Alcaldía de Bogotá.</h4>
+      <h5 style="color:#FCDD09">Alcaldía de Bogotá</h5>
+      <h1 class='display-1' style="color:#FCDD09"><b>Haz tu autoevaluación del COVID-19</b></h1>
+      <h4 style="color:#FCDD09">Evalúa tu salud y recibe instrucciones y recomendaciones sobre el COVID-19 con la Página Oficial de la Alcaldía de Bogotá.</h4>
     </div>
   </div>
   </div>
@@ -41,7 +41,11 @@
 
 <div class='row'>
   <div class='col d-flex justify-content-center'>
-    <button type="button" class="btn btn-primary btn-lg">Entendido. Realizar autoevaluación</button>
+    <a type="button" class="btn btn-primary btn-lg" href='{% url 'autoevaluación' %}'>
+      <div class='text-white'>
+        Entendido. Realizar autoevaluación
+      </div>
+    </a>
   </div>
 </div>
 
@@ -55,8 +59,8 @@
         <img src='{% static 'images/fingerprint.png' %}' class="card-img-top" alt="...">
       </div>
       <div class="card-body">
-        <h5 class="card-title text-center text-white">Introduce tus datos</h5>
-        <p class="card-text text-center text-white">Introduce tu información de contacto para el correcto funcionamiento de tu evaluación.</p>
+        <h5 class="card-title text-center" style="color:#FCDD09">Introduce tus datos</h5>
+        <p class="card-text text-center" style="color:#FCDD09">Introduce tu información de contacto para el correcto funcionamiento de tu evaluación.</p>
       </div>
     </div>
 
@@ -65,8 +69,8 @@
         <img src='{% static 'images/process.png' %}' class="card-img-top" alt="...">
       </div>
       <div class="card-body">
-        <h5 class="card-title text-center text-white">Realiza tu autoevaluación</h5>
-        <p class="card-text text-center text-white">Contesta las preguntas de evaluación, te ayudarán a saber más sobre tu estado de salud.</p>
+        <h5 class="card-title text-center" style="color:#FCDD09">Realiza tu autoevaluación</h5>
+        <p class="card-text text-center" style="color:#FCDD09">Contesta las preguntas de evaluación, te ayudarán a saber más sobre tu estado de salud.</p>
       </div>
     </div>
 
@@ -75,8 +79,8 @@
         <img src='{% static 'images/bell.png' %}' class="card-img-top" alt="...">
       </div>
       <div class="card-body">
-        <h5 class="card-title text-center text-white">Instrucciones y consejos</h5>
-        <p class="card-text text-center text-white">Tras la autoevaluación, te aconsejaremos qué hacer después y te ofreceremos recomendaciones.</p>
+        <h5 class="card-title text-center" style="color:#FCDD09">Instrucciones y consejos</h5>
+        <p class="card-text text-center" style="color:#FCDD09">Tras la autoevaluación, te aconsejaremos qué hacer después y te ofreceremos recomendaciones.</p>
       </div>
     </div>
 
@@ -87,18 +91,18 @@
 <div class='d-flex justify-content-center mt-5 mb-5'>
   <div class='text-center'>
   <img src='{% static 'images/Escudo Bogotá.png' %}' class="img-fluid" alt="Responsive image">
-    <h5 style="color:#DA131A">Alcaldía de Bogotá</h5>
+    <h5 style="color:#FCDD09">Alcaldía de Bogotá</h5>
   </div>
 </div>
 
 <div class='row d-flex justify-content-center mb-5'>
-    <img src='{% static 'images/virus2.png' %}' width="30" height="30" class="d-inline-block align-top mr-3" alt="">
-    <h4 style="color:#DA131A">Asistencia COVID-19</h4>
+    <img src='{% static 'images/virus.png' %}' width="30" height="30" class="d-inline-block align-top mr-3" alt="">
+    <h4 style="color:#FCDD09">Asistencia COVID-19</h4>
 </div>
 
 <div class='row d-flex justify-content-center mb-5'>
-    <h5 style="color:#DA131A">Terminos y condiciones</h5>
-    <h5 class='ml-3' style="color:#DA131A">Aviso de privacidad</h5>
+    <h5 style="color:#FCDD09">Terminos y condiciones</h5>
+    <h5 class='ml-3' style="color:#FCDD09">Aviso de privacidad</h5>
 </div>
 
 </div>

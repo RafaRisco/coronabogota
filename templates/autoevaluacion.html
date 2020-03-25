@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block navbar %}
+{% include 'navbar.html' %}
+{% endblock navbar %}
+
+{% block content %}
+
+<div class='container'>
+<a class='text-white'>Volver</a>
+<br>
+<h2 class='text-white'><b>Autoevaluación oficial <br>de la Alcaldía de Bogotá</b></h2>
+<br>
+<p class='text-white'>Toda la información se recoge por la Comunidad de Madrid con fines estrictamente de interés público ante la situación decretada por las Autoridades Públicas, para proteger y salvaguardar un interés esencial para la vida de las personas. Recuerda estas recomendaciones básicas:</p>
+<br>
+
+<ul>
+<li class='text-white'>Quédate en casa.</li>
+<li class='text-white'>Evita el contacto con personas de riesgo.</li>
+<li class='text-white'>Lávate correctamente las manos.</li>
+<li class='text-white'>Si sientes síntomas, aíslate.</li>
+<li class='text-white'>Confía en la información oficial.</li>
+</ul>
+<a class='text-white'>Información oficial de la Comunidad de Madrid</a>
+<p class='text-white'><small>Para utilizar esta página debes ser mayor de 16 años</small></p>
+
+<a type="button" class="btn btn-primary btn-lg" href='{% url 'autoevaluación' %}'>
+  <div class='text-white'>
+    Siguiente
+  </div>
+</a>
+
+</div>
+{% endblock content %}

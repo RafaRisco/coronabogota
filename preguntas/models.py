@@ -34,10 +34,11 @@ def respuesta_pre_save(instance, sender, *args, **kwargs):
         elif instance.titulo == 'No':
             instance.titulo_binario = 0
 
-pre_save.connect(respuesta_pre_save, sender=Respuesta)        
+pre_save.connect(respuesta_pre_save, sender=Respuesta)
 
 def respuesta_post_save(instance, sender, created, *args, **kwargs):
     consulta = instance.consulta
+    consulta.gravedad_de_consulta()
     consulta.save()
 
 post_save.connect(respuesta_post_save, sender=Respuesta)
