@@ -39,6 +39,9 @@ DEBUG = True
 ALLOWED_HOSTS = []
 
 
+ACCOUNT_SID=env('ACCOUNT_SID')
+AUTH_TOKEN=env('AUTH_TOKEN')
+
 # Application definition
 
 INSTALLED_APPS = [

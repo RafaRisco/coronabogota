@@ -1,0 +1,109 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block navbar %}
+{% include 'navbar.html' %}
+{% endblock navbar %}
+
+{% block content %}
+
+<div class='container'>
+
+  <div class='col-10'>
+    <h2 class='text-white' class='mt-3'><b>Introduce el código que te hemos mandado a tu celular</h2>
+  </div>
+
+  <form name='validacion' method='POST' action='{% url 'validacion_telefono' %}' onLoad="document.validacion.valor1.focus()" class='mt-3'>
+    {% csrf_token %}
+      <div class='col-10'>
+        <div class='row'>
+
+        <div class='col-1'>
+          <input type='text' class="form-control form-control-lg" name='valor1' value='' id='telefono' onKeyUp="check()">
+        </div>
+        <div class='col-1'>
+          <input type='text' class="form-control form-control-lg" name='valor2' value='' id='telefono' onKeyUp="check1()">
+        </div>
+        <div class='col-1'>
+          <input type='text' class="form-control form-control-lg" name='valor3' value='' id='telefono' onKeyUp="check2()">
+        </div>
+        <div class='col-1'>
+          <input type='text' class="form-control form-control-lg" name='valor4' value='' id='telefono' onKeyUp="check3()">
+        </div>
+        <div class='col-1'>
+          <input type='text' class="form-control form-control-lg" name='valor5' value='' id='telefono' onKeyUp="check4()">
+        </div>
+        <div class='col-1'>
+          <input type='text' class="form-control form-control-lg" name='valor6' value='' id='telefono' onKeyUp="check5()">
+        </div>
+      </div>
+    </div>
+
+    <button type="submit" name='button' class="btn btn-primary btn-lg mt-5" id='Accept'>
+      <div class='text-white'>
+        Validar
+      </div>
+    </button>
+  </form>
+
+</div>
+
+<script type="text/javascript">
+  function check()
+  {
+    var letters = document.validacion.valor1.value.length +1;
+    if (letters <= 1)
+      {document.validacion.valor1.focus()}
+    else
+      {document.validacion.valor2.focus()}
+  }
+
+  function check1()
+  {
+    var letters = document.validacion.valor2.value.length +1;
+    if (letters <= 1)
+      {document.validacion.valor2.focus()}
+    else
+      {document.validacion.valor3.focus()}
+  }
+
+  function check2()
+  {
+    var letters = document.validacion.valor3.value.length +1;
+    if (letters <= 1)
+      {document.validacion.valor3.focus()}
+    else
+      {document.validacion.valor4.focus()}
+  }
+
+  function check3()
+  {
+    var letters = document.validacion.valor4.value.length +1;
+    if (letters <= 1)
+      {document.validacion.valor4.focus()}
+    else
+      {document.validacion.valor5.focus()}
+  }
+
+  function check4()
+  {
+    var letters = document.validacion.valor5.value.length +1;
+    if (letters <= 1)
+      {document.validacion.valor5.focus()}
+    else
+      {document.validacion.valor6.focus()}
+  }
+
+  function check5()
+  {
+    var letters = document.validacion.valor1.value.length +1;
+    if (letters <= 1)
+      {document.validacion.valor1.focus()}
+    else
+      {document.validacion.button.focus()}
+  }
+
+</script>
+
+{% endblock content %}

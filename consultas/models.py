@@ -49,3 +49,17 @@ class Ciudad(models.Model):
 
     def __str__(self):
         return str(self.pk)
+
+ESTADO_CODIGO = (
+    ('Activo', 'Activo'),
+    ('Usado', 'Usado'),
+    ('Cancelado', 'Cancelado')
+)
+
+class Validacion(models.Model):
+    telefono    = models.CharField(max_length=10)
+    codigo      = models.IntegerField()
+    estado      = models.CharField(max_length=30, choices=ESTADO_CODIGO)
+
+    def __str__(self):
+        return str(self.pk)

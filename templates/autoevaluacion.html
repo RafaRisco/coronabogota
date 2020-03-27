@@ -9,11 +9,18 @@
 {% block content %}
 
 <div class='container'>
-<a class='text-white'>Volver</a>
+
+<div class='row'>
+  <a href='{% url 'home' %}' class='text-white'>
+    <img src='{% static 'images/back2.png' %}' class="img-fluid" alt="Responsive image">
+     Volver
+  </a>
+</div>
+
 <br>
 <h2 class='text-white'><b>Autoevaluación oficial <br>de la Alcaldía de Bogotá</b></h2>
 <br>
-<p class='text-white'>Toda la información se recoge por la Comunidad de Madrid con fines estrictamente de interés público ante la situación decretada por las Autoridades Públicas, para proteger y salvaguardar un interés esencial para la vida de las personas. Recuerda estas recomendaciones básicas:</p>
+<p class='text-white'>Toda la información se recoge por la Alcaldía de Bogotá con fines estrictamente de interés público ante la situación decretada por las Autoridades Públicas, para proteger y salvaguardar un interés esencial para la vida de las personas. Recuerda estas recomendaciones básicas:</p>
 <br>
 
 <ul>
@@ -23,10 +30,10 @@
 <li class='text-white'>Si sientes síntomas, aíslate.</li>
 <li class='text-white'>Confía en la información oficial.</li>
 </ul>
-<a class='text-white'>Información oficial de la Comunidad de Madrid</a>
+<a class='text-white' href=''><u>Información oficial de la Alcaldía de Bogotá</u></a>
 <p class='text-white'><small>Para utilizar esta página debes ser mayor de 16 años</small></p>
 
-<a type="button" class="btn btn-primary btn-lg" href='{% url 'autoevaluación' %}'>
+<a type="button" class="btn btn-primary btn-lg" href='{% url 'pagina_dos' %}'>
   <div class='text-white'>
     Siguiente
   </div>

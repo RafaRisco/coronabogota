@@ -20,11 +20,15 @@ from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 from django.conf.urls.static import static
 
 
-from .views import home, inicio_test
+from .views import home, inicio_test, pagina_dos, telefono, validacion_telefono, geolocalizacion
 
 urlpatterns = [
     path('', home, name='home'),
     path('autoevaluación/', inicio_test, name='autoevaluación'),
+    path('autoevaluación_dos/', pagina_dos, name='pagina_dos'),
+    path('telefono/', telefono, name='telefono'),
+    path('validacion_telefono/', validacion_telefono, name='validacion_telefono'),
+    path('geolocalizacion/', geolocalizacion, name='geolocalizacion'),
     path('admin/', admin.site.urls),
     path('consultas/', include(('consultas.urls', 'consultas'), namespace='consultas')),
 ]

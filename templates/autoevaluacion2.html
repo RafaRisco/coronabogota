@@ -1,0 +1,90 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block navbar %}
+{% include 'navbar.html' %}
+{% endblock navbar %}
+
+{% block content %}
+
+<div class='container'>
+
+<div class='col-9'>
+  <h2 class='text-white' class='mt-5'><b>Gracias por utilizar esta app, aquí podrás:</h2>
+
+  <div class='row mt-5'>
+    <div class='col-6'>
+      <div class='row'>
+        <div class='col-2 align-middle'>
+          <div class='rounded-circle bg-primary'>
+            <img src='{% static 'images/heat2.png' %}' class="img-fluid p-1" alt="Responsive image">
+          </div>
+        </div>
+        <div class='col-10'>
+        <p class='text-white'>
+          Evaluar tu situación de salud en función de tus síntomas.
+        </p>
+        </div>
+      </div>
+    </div>
+
+    <div class='col-6'>
+      <div class='row'>
+        <div class='col-2'>
+          <div class='rounded-circle bg-primary'>
+            <img src='{% static 'images/notification.png' %}' class="img-fluid p-1" alt="Responsive image">
+          </div>
+        </div>
+        <div class='col-10'>
+        <p class='text-white'>
+          Recibir instrucciones y recomendaciones en función de tu estado de salud.
+        </p>
+        </div>
+      </div>
+    </div>
+
+    <div class='col'>
+      <div class='row mt-3'>
+        <div class='col-2'>
+          <div class='rounded-circle bg-primary'>
+            <img src='{% static 'images/clock.png' %}' class="img-fluid p-1" alt="Responsive image">
+          </div>
+        </div>
+        <div class='col-10'>
+        <p class='text-white'>
+          Evaluarte cada 12h y mantener actualizado tu estado de salud.
+        </p>
+        </div>
+      </div>
+    </div>
+
+    <div class='col'>
+      <div class='row mt-3'>
+        <div class='col-2'>
+          <div class='rounded-circle bg-white'>
+            <img src='{% static 'images/heart.png' %}' class="img-fluid p-2" alt="Responsive image">
+          </div>
+        </div>
+        <div class='col-10'>
+        <p class='text-white'>
+          Ayudar a todos los profesionales que trabajan por tu seguridad y bienestar.
+        </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <p class='text-white'><small>Para utilizar esta página debes ser mayor de 16 años</small></p>
+
+  <a type="button" class="btn btn-primary btn-lg" href='{% url 'telefono' %}'>
+    <div class='text-white'>
+      Siguiente
+    </div>
+  </a>
+
+</div>
+
+
+
+</div>
+{% endblock content %}

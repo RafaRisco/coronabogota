@@ -1,7 +1,7 @@
 from django.contrib import admin
 
 # Register your models here.
-from .models import Consulta, Ciudad
+from .models import Consulta, Ciudad, Validacion
 
 class ConsultaAdmin(admin.ModelAdmin):
     list_display = [
@@ -22,3 +22,12 @@ class CiudadAmin(admin.ModelAdmin):
     ]
 
 admin.site.register(Ciudad, CiudadAmin)
+
+class ValidacionAdmin(admin.ModelAdmin):
+    list_display = [
+        'telefono',
+        'codigo',
+        'estado'
+    ]
+
+admin.site.register(Validacion, ValidacionAdmin)
