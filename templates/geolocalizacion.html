@@ -14,11 +14,28 @@
     <h2 class='text-white' class='mt-3'><b>Nos gustaría conocer tu ubicación</h2>
   </div>
 
-  <button type="submit" class="btn btn-primary btn-lg mt-5" id='Accept' onClick="getLocation()">
-    <div class='text-white'>
-      Facilitar mi ubicación
-    </div>
-  </button>
+  <div class='ml-3'>
+  <div class='row' id='facilitar'>
+    <button type="submit" class="btn btn-primary btn-lg mt-5" id='Accept' onClick="getLocation()">
+      <div class='text-white'>
+        Facilitar mi ubicación
+      </div>
+    </button>
+  </div>
+
+  <div class='row' id='continuar' style='display:none'>
+    <form method='POST' action=''>
+      {% csrf_token %}
+    <button type="submit" class="btn btn-primary btn-lg mt-5" id='Accept'>
+      <input type='hidden' id='lat' name='lat' value=''>
+      <input type='hidden' id='long' name='long' value=''>
+      <div class='text-white'>
+        Continuar
+      </div>
+    </button>
+    </form>
+  </div>
+  </div>
 
 </div>
 
@@ -39,6 +56,15 @@
   {
     var lat = position.coords.latitude;
     var long = position.coords.longitude;
+    document.getElementById("facilitar").style.display = "none";
+    document.getElementById("continuar").style.display = "block";
+    // document.getElementById("lat").innerHTML = "Lat: " + lat;
+    // document.getElementById("long").innerHTML = "Long: " + long;
+    // document.getElementById("long").style.display = "block";
+    // document.getElementById("lat").style.display = "block";
+    document.getElementById("lat").value = lat;
+    document.getElementById("long").value = long;
+
     console.log(lat, long)
   }
 

@@ -84,4 +84,9 @@ def validacion_telefono(request):
     return render(request, 'confirmacion_telefono.html', {})
 
 def geolocalizacion(request):
+    if request.method == 'POST':
+        request.session['lat'] = request.POST.get('lat')
+        request.session['long'] = request.POST.get('long')
+        return HttpResponseRedirect(reverse('consultas:datos_personales'))
+        # print(request.POST)
     return render(request, 'geolocalizacion.html', {})

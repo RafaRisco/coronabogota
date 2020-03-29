@@ -11,13 +11,18 @@
 
 <div class='col'>
 
-<div class='row d-flex justify-content-center'>
-  <div class='col-10'>
+<div class='row justify-content-center'>
+  <div class='col-10-lg'>
   <div class='d-flex justify-content-center mt-5'>
     <div class='text-center'>
     <img src='{% static 'images/Escudo Bogotá.png' %}' class="img-fluid" alt="Responsive image">
       <h5 style="color:#FCDD09">Alcaldía de Bogotá</h5>
-      <h1 class='display-1' style="color:#FCDD09"><b>Haz tu autoevaluación del COVID-19</b></h1>
+      <div class='d-none d-lg-block d-xl-block'>
+        <h1 class='display-1' style="color:#FCDD09"><b>Haz tu autoevaluación del COVID-19</b></h1>
+      </div>
+      <div class='d-block d-md-block d-lg-none'>
+        <h1 style="color:#FCDD09"><b>Haz tu autoevaluación del COVID-19</b></h1>
+      </div>
       <h4 style="color:#FCDD09">Evalúa tu salud y recibe instrucciones y recomendaciones sobre el COVID-19 con la Página Oficial de la Alcaldía de Bogotá.</h4>
     </div>
   </div>

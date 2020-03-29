@@ -10,36 +10,35 @@
 
 <div class='container'>
 
-  <div class='col-10'>
+  <div class='col-lg-10'>
     <h2 class='text-white' class='mt-3'><b>Introduce el código que te hemos mandado a tu celular</h2>
   </div>
 
   <form name='validacion' method='POST' action='{% url 'validacion_telefono' %}' onLoad="document.validacion.valor1.focus()" class='mt-3'>
     {% csrf_token %}
-      <div class='col-10'>
+      <div class='col-lg-10'>
         <div class='row'>
 
-        <div class='col-1'>
-          <input type='text' class="form-control form-control-lg" name='valor1' value='' id='telefono' onKeyUp="check()">
+        <div class='col-1 mr-4 mr-lg-1'>
+          <input type='text' class="form-control form-control-lg" name='valor1' value='' id='telefono' onKeyUp="check()" style='width:50px;text-align:center;padding:05px;'>
         </div>
-        <div class='col-1'>
-          <input type='text' class="form-control form-control-lg" name='valor2' value='' id='telefono' onKeyUp="check1()">
+        <div class='col-1 mr-4 mr-lg-1'>
+          <input type='text' class="form-control form-control-lg" name='valor2' value='' id='telefono' onKeyUp="check1()" style='width:50px;text-align:center;padding:05px;'>
         </div>
-        <div class='col-1'>
-          <input type='text' class="form-control form-control-lg" name='valor3' value='' id='telefono' onKeyUp="check2()">
+        <div class='col-1 mr-4 mr-lg-1'>
+          <input type='text' class="form-control form-control-lg" name='valor3' value='' id='telefono' onKeyUp="check2()" style='width:50px;text-align:center;padding:05px;'>
         </div>
-        <div class='col-1'>
-          <input type='text' class="form-control form-control-lg" name='valor4' value='' id='telefono' onKeyUp="check3()">
+        <div class='col-1 mr-4 mr-lg-1'>
+          <input type='text' class="form-control form-control-lg" name='valor4' value='' id='telefono' onKeyUp="check3()" style='width:50px;text-align:center;padding:05px;'>
         </div>
-        <div class='col-1'>
-          <input type='text' class="form-control form-control-lg" name='valor5' value='' id='telefono' onKeyUp="check4()">
+        <div class='col-1 mr-4 mr-lg-1'>
+          <input type='text' class="form-control form-control-lg" name='valor5' value='' id='telefono' onKeyUp="check4()" style='width:50px;text-align:center;padding:05px;'>
         </div>
-        <div class='col-1'>
-          <input type='text' class="form-control form-control-lg" name='valor6' value='' id='telefono' onKeyUp="check5()">
+        <div class='col-1 mr-4 mr-lg-1'>
+          <input type='text' class="form-control form-control-lg" name='valor6' value='' id='telefono' onKeyUp="check5()" style='width:50px;text-align:center;padding:05px;'>
         </div>
       </div>
     </div>
-
     <button type="submit" name='button' class="btn btn-primary btn-lg mt-5" id='Accept'>
       <div class='text-white'>
         Validar

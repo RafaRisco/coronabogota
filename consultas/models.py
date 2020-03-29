@@ -4,7 +4,25 @@ from django.db.models import Avg
 
 # Create your models here.
 
+SEXO_OPCIONES = (
+    ('Hombre', 'Hombre'),
+    ('Mujer', 'Mujer')
+)
+
+class Persona(models.Model):
+    nombre_y_apellidos = models.CharField(max_length=150)
+    dia_nacimiento     = models.PositiveIntegerField()
+    mes_nacimiento     = models.PositiveIntegerField()
+    año_nacimiento     = models.PositiveIntegerField()
+    cedula             = models.PositiveIntegerField()
+    sexo               = models.CharField(max_length=100, choices=SEXO_OPCIONES, blank=True, null=True)
+    direccion          = models.CharField(max_length=150)
+
+    def __str__(self):
+        return self.nombre_y_apellidos
+
 class Consulta(models.Model):
+    ciudadano   = models.ForeignKey(Persona, on_delete=models.CASCADE, blank=True, null=True)
     telefono    = models.CharField(max_length=10)
     lat         = models.DecimalField(max_digits=9,decimal_places=6)
     long        = models.DecimalField(max_digits=9,decimal_places=6)

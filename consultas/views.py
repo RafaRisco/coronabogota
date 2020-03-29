@@ -1,8 +1,11 @@
-from django.shortcuts import render
-from django.views.generic.list import ListView
 from django.db.models import Q
+from django.shortcuts import render
+from django.urls import reverse
+from django.views.generic.list import ListView
+from django.views.generic.edit import CreateView
 
-from .models import Consulta, Ciudad
+from .forms import PersonaForm
+from .models import Consulta, Ciudad, Persona
 # Create your views here.
 
 class ConsultaListView(ListView):
@@ -33,3 +36,21 @@ class ConsultaListView(ListView):
         if gravedad:
             qs = qs.filter(gravedad__in=gravedad)
         return qs
+
+class PersonaView(CreateView):
+    model = Persona
+    form_class = PersonaForm
+
+    def form_valid(self, form, *args, **kwargs):
+        result = super(PersonaView, self).form_valid(form, *args, **kwargs)
+        print(self.request.session['telefono'], self.request.session['lat'], self.request.session['long'])
+        consulta = Consulta.objects.create(
+            telefono=self.request.session['telefono'],
+            lat=self.request.session['lat'],
+            long=self.request.session['long'],
+            ciudadano=self.object
+            )
+        return result
+
+    def get_success_url(self):
+        return reverse('preguntas:pregunta', kwargs={'pk': 1})

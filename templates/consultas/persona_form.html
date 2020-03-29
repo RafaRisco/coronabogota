@@ -1,0 +1,90 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block navbar %}
+{% include 'navbar.html' %}
+{% endblock navbar %}
+
+{% block content %}
+
+<div class='container'>
+
+  <div class='col-10 mb-5 ml-3'>
+    <div class='row'>
+      <a href='{% url 'home' %}' class='text-white'>
+        <img src='{% static 'images/back2.png' %}' class="img-fluid" alt="Responsive image">
+         Volver
+      </a>
+    </div>
+  </div>
+
+  <div class='col-10 mb-3'>
+    <h2 class='text-white' class='mt-5'><b>Introduce tus datos personales</h2>
+    <p class='text-white'>Utilizaremos datos relativos a tu salud para el correcto funcionamiento del servicio de autoevaluación y otras finalidades relacionadas, por motivos de interés público.</p>
+    <a href='' class='my-1'>Quiero saber más sobre el uso de mis datos personales y su finalidad.</a>
+  </div>
+
+  <div class='col-lg-5'>
+    <form method='POST' action=''>
+      {% csrf_token %}
+    <div class='text-white'>
+      {{form.nombre_y_apellidos.label}}
+    </div>
+    {{form.nombre_y_apellidos}}
+    <div class='row'>
+      <div class='col-4'>
+        <div class='text-white'>
+          {{form.dia_nacimiento.label}}
+        </div>
+        {{form.dia_nacimiento}}
+      </div>
+      <div class='col-4'>
+        <div class='text-white'>
+          {{form.mes_nacimiento.label}}
+        </div>
+        {{form.mes_nacimiento}}
+      </div>
+      <div class='col-4'>
+        <div class='text-white'>
+          {{form.año_nacimiento.label}}
+        </div>
+        {{form.año_nacimiento}}
+      </div>
+    </div>
+    <div class='row'>
+      <div class='col-8'>
+        <div class='text-white'>
+          {{form.cedula.label}}
+        </div>
+        {{form.cedula}}
+      </div>
+    </div>
+    <div class='row'>
+      <div class='col-8'>
+        <div class='text-white'>
+          {{form.sexo.label}}
+        </div>
+        <div class='text-white'>
+          {{form.sexo}}
+        </div>
+      </div>
+    </div>
+    <div class='text-white'>
+      {{form.direccion.label}}
+    </div>
+    {{form.direccion}}
+
+    <button type="submit" name='button' class="btn btn-primary btn-lg my-3" id='Accept'>
+      <div class='text-white'>
+        Enviar
+      </div>
+    </button>
+
+
+    </form>
+  </div>
+
+</div>
+
+{% endblock content %}

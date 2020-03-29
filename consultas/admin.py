@@ -1,12 +1,13 @@
 from django.contrib import admin
 
 # Register your models here.
-from .models import Consulta, Ciudad, Validacion
+from .models import Consulta, Ciudad, Validacion, Persona
 
 class ConsultaAdmin(admin.ModelAdmin):
     list_display = [
         'telefono',
         'gravedad',
+        'ciudadano',
         'lat',
         'long',
         'address',
@@ -31,3 +32,16 @@ class ValidacionAdmin(admin.ModelAdmin):
     ]
 
 admin.site.register(Validacion, ValidacionAdmin)
+
+class PersonaAdmin(admin.ModelAdmin):
+    list_display = [
+        'nombre_y_apellidos',
+        'dia_nacimiento',
+        'mes_nacimiento',
+        'año_nacimiento',
+        'cedula',
+        'sexo',
+        'direccion'
+    ]
+
+admin.site.register(Persona, PersonaAdmin)

@@ -31,6 +31,7 @@ urlpatterns = [
     path('geolocalizacion/', geolocalizacion, name='geolocalizacion'),
     path('admin/', admin.site.urls),
     path('consultas/', include(('consultas.urls', 'consultas'), namespace='consultas')),
+    path('preguntas/', include(('preguntas.urls', 'preguntas'), namespace='preguntas')),
 ]
 
 

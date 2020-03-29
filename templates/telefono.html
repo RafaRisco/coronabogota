@@ -11,7 +11,7 @@
 <div class='container'>
 
 <div class='col'>
-<div class='col-9'>
+<div class='col-lg-9'>
   <div class='row ml-1 mb-3'>
     <a href='{% url 'home' %}' class='text-white'>
       <img src='{% static 'images/back2.png' %}' class="img-fluid" alt="Responsive image">
@@ -26,7 +26,7 @@
 
       <form method='POST' action='{% url 'telefono' %}'>
         {% csrf_token %}
-        <div class='col-6'>
+        <div class='col-lg-6'>
           {{form.telefono}}
         <div class='d-flex align-items-center'>
           <input type="checkbox" id="checked" name="checked" value="checked" style='width: 20px; height: 20px;' class='mt-1' onClick="EnableSubmit(this)">
