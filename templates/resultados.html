@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block navbar %}
+{% include 'navbar.html' %}
+{% endblock navbar %}
+
+{% block content %}
+
+<div class='container'>
+
+  <div class='col-10 mb-5 ml-3'>
+    <div class='row'>
+      <a href='{% url 'home' %}' class='text-white'>
+        <img src='{% static 'images/back2.png' %}' class="img-fluid" alt="Responsive image">
+         Volver
+      </a>
+    </div>
+  </div>
+
+  <div class='col-10 mb-3'>
+    <h2 class='text-white' class='mt-5'><b>Tus Resultados</h2>
+  </div>
+
+
+  <div class='col-10 mb-3'>
+    {% if consulta.gravedad == 'Baja' %}
+    <p class='text-white' class='mt-5'><b>Según tus respuestas, tu nivel de gravedad es BAJO.</p>
+    <p class='text-white' class='mt-5'><b>Si en los próximos días tienes algún síntoma, puedes volver a realizar la autoevaluación</p>
+    {% elif consulta.gravedad == 'Media' %}
+    <p class='text-white' class='mt-5'><b>Según tus respuestas, tu nivel de gravedad es MEDIO.</p>
+    <p class='text-white' class='mt-5'><b>Por favor, repite la autoevaluación en 12 horas</p>
+    {% elif consulta.gravedad == 'Alta' %}
+    <p class='text-white' class='mt-5'><b>Según tus respuestas, tu nivel de gravedad es ALTA.</p>
+    <p class='text-white' class='mt-5'><b>Nos contactaremos contigo lo antes posible. Si en el plazo de 1 hora no has recibido una llamada nuestra, por favor, llama al teléfono 123 456 789</p>
+    {% endif %}
+
+  </div>
+
+  </div>
+</div>
+
+{% endblock content %}

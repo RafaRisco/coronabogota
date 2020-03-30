@@ -42,6 +42,9 @@ ALLOWED_HOSTS = []
 ACCOUNT_SID=env('ACCOUNT_SID')
 AUTH_TOKEN=env('AUTH_TOKEN')
 
+GMAPS_API_KEY=env('GMAPS_API_KEY')
+
+
 # Application definition
 
 INSTALLED_APPS = [

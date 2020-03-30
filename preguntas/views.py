@@ -1,8 +1,7 @@
 from django.urls import reverse
 from django.shortcuts import render
-from django.views.generic import DetailView
+from django.views.generic import DetailView, FormView, TemplateView
 from django.views.generic.edit import CreateView
-from django.views.generic import FormView
 
 # Create your views here.
 from consultas.models import Consulta
@@ -26,7 +25,8 @@ class PreguntaDetailView(FormView, DetailView):
         pregunta = self.get_object()
         consulta = Consulta.objects.filter(
             telefono=telefono
-        ).first()
+        ).last()
+        self.request.session['consulta'] = consulta.pk
         respuesta = Respuesta.objects.create(
             consulta=consulta,
             pregunta=pregunta,
@@ -38,4 +38,17 @@ class PreguntaDetailView(FormView, DetailView):
         pregunta = self.get_object()
         pk = pregunta.pk
         nuevo_pk = pk + 1
+        preguntas = len(Pregunta.objects.all())
+        if nuevo_pk > preguntas:
+            return reverse('preguntas:resultado')
         return reverse('preguntas:pregunta', kwargs={'pk': nuevo_pk})
+
+class ResultadoView(TemplateView):
+    template_name='resultados.html'
+
+    def get_context_data(self, *args, **kwargs):
+        context = super(ResultadoView, self).get_context_data(*args, **kwargs)
+        print(self.request.session['consulta'])
+        consulta = Consulta.objects.filter(pk=self.request.session['consulta']).first()
+        context['consulta'] = consulta
+        return context

@@ -19,6 +19,7 @@ class RespuestaAdmin(admin.ModelAdmin):
         'titulo',
         'titulo_pregunta',
         'titulo_binario',
+        'consulta',
         'numero_consulta',
     ]
 

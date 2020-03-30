@@ -1,3 +1,4 @@
+from django.conf import settings
 from django.db.models import Q
 from django.shortcuts import render
 from django.urls import reverse
@@ -8,6 +9,8 @@ from .forms import PersonaForm
 from .models import Consulta, Ciudad, Persona
 # Create your views here.
 
+GMAPS_API_KEY=settings.GMAPS_API_KEY
+
 class ConsultaListView(ListView):
     model = Consulta
 
@@ -15,6 +18,23 @@ class ConsultaListView(ListView):
         context = super(ConsultaListView, self).get_context_data(*args, **kwargs)
         ciudades = Ciudad.objects.all()
         context['ciudades'] = ciudades
+        context['api_key'] = GMAPS_API_KEY
+        ciudades_qs = Ciudad.objects.all()
+        ciudades_list = []
+        for ciudad in ciudades_qs:
+            ciudades_list.append(ciudad.nombre)
+        context['ciudades_list'] = ciudades_list
+        gravedad_list = ['Baja', 'Media', 'Alta']
+        context['gravedad_list'] = gravedad_list
+        ciudades_filtradas = []
+        gravedad_filtradas = []
+        for key, value in self.request.GET.items():
+            if key in ciudades_list:
+                ciudades_filtradas.append(value)
+                context['ciudades_filtradas'] = ciudades_filtradas
+            if key in gravedad_list:
+                gravedad_filtradas.append(value)
+                context['gravedad_filtradas'] = gravedad_filtradas
         return context
 
     def get_queryset(self, *args, **kwargs):

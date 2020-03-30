@@ -5,6 +5,7 @@ from .models import Consulta, Ciudad, Validacion, Persona
 
 class ConsultaAdmin(admin.ModelAdmin):
     list_display = [
+        'pk',
         'telefono',
         'gravedad',
         'ciudadano',
